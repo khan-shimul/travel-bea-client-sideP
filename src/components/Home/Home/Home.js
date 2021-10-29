@@ -1,12 +1,13 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import TourPackage from '../TourPackage/TourPackage';
+import TourPackages from '../TourPackages/TourPackages/TourPackages';
+
 
 const Home = () => {
     return (
         <div>
             <Banner />
-            <TourPackage />
+            <TourPackages />
         </div>
     );
 };

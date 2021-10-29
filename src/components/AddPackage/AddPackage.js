@@ -1,10 +1,22 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import './AddPackage.css';
 
 const AddPackage = () => {
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => {
+        axios.post('http://localhost:5000/packages', { data })
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Successfully added')
+                    reset();
+                }
+
+            })
+    }
 
     return (
         <div className="container my-5">
