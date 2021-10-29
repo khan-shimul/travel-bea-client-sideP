@@ -40,6 +40,10 @@ const Header = () => {
                         </Nav>
 
                         <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link>
+                        <Nav.Link as={NavLink} to="/add-package"
+                            activeStyle={activeStyle}
+                            className="text-white"
+                        >Add Package</Nav.Link>
 
                     </Navbar.Collapse>
                 </Container>

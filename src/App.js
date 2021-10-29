@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AddPackage from './components/AddPackage/AddPackage';
 import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Shared/Footer/Footer';
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route path="/add-package">
+            <AddPackage />
           </Route>
           <Route path="*">
             <NotFound />
