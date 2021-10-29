@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import logo from '../../../images/Logo/logo 1.png'
+import logo from '../../../images/Logo/logo1.png'
 
 const Header = () => {
     const activeStyle = {
@@ -29,18 +29,14 @@ const Header = () => {
                                 activeStyle={activeStyle}
                                 className="text-white"
                             >Home</Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#products"
+                            <Nav.Link as={HashLink} to="/home#tour-package"
                                 activeStyle={activeStyle}
                                 className="text-white"
-                            >Products</Nav.Link>
-                            <Nav.Link as={NavLink} to="/about"
+                            >Tour Package</Nav.Link>
+                            <Nav.Link as={NavLink} to="/home#about"
                                 activeStyle={activeStyle}
                                 className="text-white"
                             >About</Nav.Link>
-                            <Nav.Link as={NavLink} to="/personal-care"
-                                activeStyle={activeStyle}
-                                className="text-white"
-                            >Personal Care</Nav.Link>
                         </Nav>
 
                         <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link>
