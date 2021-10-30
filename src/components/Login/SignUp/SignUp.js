@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from 'react-router';
@@ -7,7 +7,10 @@ import useAuth from '../../../hooks/useAuth';
 import login2 from '../../../images/Login/login2.png';
 
 const SignUp = () => {
-    const { auth, user, setUser, signInUsingGoogle, error, setError, setIsLoading, createUserWithEmailAndPassword } = useAuth();
+    const { auth, setUser, signInUsingGoogle, error, setError, setIsLoading, createUserWithEmailAndPassword, updateProfile } = useAuth();
+
+    const [name, setName] = useState(null);
+    console.log(name)
 
     const location = useLocation();
     const history = useHistory();
@@ -17,6 +20,8 @@ const SignUp = () => {
     // Sign Up with email and pass
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        const name = data.fullName
+        setName(name)
         const email = data.email;
         const pass = data.password;
         // pass validation for 6 character
@@ -31,6 +36,14 @@ const SignUp = () => {
         }
         createUserWithEmailAndPassword(auth, email, pass)
             .then(result => {
+                // update user name
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
+                    .then(() => { })
+                    .catch(error => {
+                        setError(error.message)
+                    })
                 history.push(redirect_uri)
                 setError('')
             })
@@ -39,7 +52,7 @@ const SignUp = () => {
             })
     }
 
-    // handle google sign in
+    //  Google sign in
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then(result => {

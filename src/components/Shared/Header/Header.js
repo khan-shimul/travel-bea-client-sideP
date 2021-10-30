@@ -44,11 +44,14 @@ const Header = () => {
                         </Nav>
 
                         {
-                            user && <NavDropdown title="Dashboard" id="basic-nav-dropdown">
-                                <NavDropdown.Item as={NavLink} to="/manage-orders">Manage Orders</NavDropdown.Item>
-                                <NavDropdown.Item as={NavLink} to="/add-package"
-                                >Add Package</NavDropdown.Item>
-                            </NavDropdown>
+                            user && <>
+                                <NavLink to="/my-orders">My Orders</NavLink>
+                                <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                    <NavDropdown.Item as={NavLink} to="/manage-orders">Manage Orders</NavDropdown.Item>
+                                    <NavDropdown.Item as={NavLink} to="/add-package"
+                                    >Add Package</NavDropdown.Item>
+                                </NavDropdown>
+                            </>
                         }
 
                         {

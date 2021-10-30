@@ -4,6 +4,7 @@ import AddPackage from './components/AddPackage/AddPackage';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import SignUp from './components/Login/SignUp/SignUp';
+import MyOrders from './components/MyOrders/MyOrders';
 import NotFound from './components/NotFound/NotFound';
 import PackageDetails from './components/PackageDetails/PackageDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -27,6 +28,9 @@ function App() {
             <PrivateRoute exact path="/package-details/:id">
               <PackageDetails />
             </PrivateRoute>
+            <Route path="/my-orders">
+              <MyOrders />
+            </Route>
             <PrivateRoute path="/add-package">
               <AddPackage />
             </PrivateRoute>
