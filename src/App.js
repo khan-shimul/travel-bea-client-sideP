@@ -5,6 +5,7 @@ import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import PackageDetails from './components/PackageDetails/PackageDetails';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import AuthProvider from './Context/AuthProvider';
@@ -22,9 +23,9 @@ function App() {
             <Route exact path="/home">
               <Home />
             </Route>
-            <Route exact path="/package-details/:id">
+            <PrivateRoute exact path="/package-details/:id">
               <PackageDetails />
-            </Route>
+            </PrivateRoute>
             <Route path="/add-package">
               <AddPackage />
             </Route>

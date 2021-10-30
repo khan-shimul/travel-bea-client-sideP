@@ -4,10 +4,16 @@ import { useForm } from "react-hook-form";
 import './Login.css';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
     const { user, setUser, signInUsingGoogle, error, setError, setIsLoading } = useAuth();
-    console.log(user)
+    // console.log(user)
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
+    console.log(redirect_uri)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -19,6 +25,7 @@ const Login = () => {
                 console.log(result.user)
                 setUser(result.user)
                 setError('')
+                history.push(redirect_uri)
 
             })
             .catch(error => {
