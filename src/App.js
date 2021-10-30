@@ -26,9 +26,9 @@ function App() {
             <PrivateRoute exact path="/package-details/:id">
               <PackageDetails />
             </PrivateRoute>
-            <Route path="/add-package">
+            <PrivateRoute path="/add-package">
               <AddPackage />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>

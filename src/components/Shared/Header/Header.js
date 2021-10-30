@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
@@ -44,8 +44,11 @@ const Header = () => {
                         </Nav>
 
                         {
-                            !user ? <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link> :
-                                <button onClick={logOut}>Logout</button>
+                            user && <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={NavLink} to="/manage-orders">Manage Orders</NavDropdown.Item>
+                                <NavDropdown.Item as={NavLink} to="/add-package"
+                                >Add Package</NavDropdown.Item>
+                            </NavDropdown>
                         }
 
                         {
@@ -54,10 +57,10 @@ const Header = () => {
                             </div>
                         }
 
-                        <Nav.Link as={NavLink} to="/add-package"
-                            activeStyle={activeStyle}
-                            className="text-white"
-                        >Add Package</Nav.Link>
+                        {
+                            !user ? <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link> :
+                                <button onClick={logOut}>Logout</button>
+                        }
 
                     </Navbar.Collapse>
                 </Container>

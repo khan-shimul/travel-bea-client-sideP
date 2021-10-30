@@ -15,7 +15,7 @@ const Login = () => {
     const redirect_uri = location.state?.from || '/home';
     console.log(redirect_uri)
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
 
     // handle google sign in
