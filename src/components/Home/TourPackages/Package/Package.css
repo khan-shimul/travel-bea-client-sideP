@@ -3,3 +3,8 @@
     width: 100%;
     object-fit: cover;
 }
+
+.rating-star{
+    font-size: 14px;
+    color: #f57e2f;
+}

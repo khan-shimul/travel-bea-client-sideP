@@ -3,6 +3,7 @@ import './App.css';
 import AddPackage from './components/AddPackage/AddPackage';
 import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import PackageDetails from './components/PackageDetails/PackageDetails';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/package-details/:id">
+            <PackageDetails />
           </Route>
           <Route path="/add-package">
             <AddPackage />
