@@ -8,7 +8,7 @@ const AddPackage = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/packages', { data })
+        axios.post('https://guarded-thicket-61427.herokuapp.com/packages', { data })
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Successfully added')

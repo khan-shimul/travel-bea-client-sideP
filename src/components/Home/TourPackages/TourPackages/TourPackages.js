@@ -11,7 +11,7 @@ const TourPackage = () => {
 
     // Load data from db
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
+        fetch('https://guarded-thicket-61427.herokuapp.com/packages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

@@ -9,7 +9,7 @@ const PackageDetails = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/${id}`)
+        fetch(`https://guarded-thicket-61427.herokuapp.com/packages/${id}`)
             .then(res => res.json())
             .then(data => setSinglePack(data))
     }, [])
