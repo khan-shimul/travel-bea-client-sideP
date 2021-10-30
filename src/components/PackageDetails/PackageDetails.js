@@ -3,8 +3,11 @@ import { Button, Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import './PackageDetails.css';
+import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const PackageDetails = () => {
+    const { user } = useAuth()
     const [singlePack, setSinglePack] = useState({});
     const { id } = useParams();
 
@@ -16,7 +19,18 @@ const PackageDetails = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data.email, singlePack)
+        const packaged = singlePack;
+        packaged.email = user.email;
+        packaged.clientInfo = data;
+        packaged.status = 'Pending';
+        console.log(packaged)
+        axios.post('http://localhost:5000/booked', { packaged })
+            .then(result => {
+                if (result.data.insertedId) {
+                    alert('Successfully booked')
+                    // reset();
+                }
+            })
     }
 
 
@@ -45,8 +59,9 @@ const PackageDetails = () => {
                     <div className="col-md-4">
                         <form onSubmit={handleSubmit(onSubmit)} className="sub-form d-flex flex-column p-4">
                             <h2>Book This Package</h2>
-                            <input {...register("fullName", { required: true })} placeholder="Your Full Name" className="mb-2 p-2 border rounded-2" />
-                            <input type="email" {...register("email", { required: true })} placeholder="Your Email" className="mb-2 p-2 border rounded-2" />
+                            <input defaultValue={singlePack?.name} readOnly {...register("packageName")} className="mb-2 p-2 border rounded-2" />
+                            <input defaultValue={user.displayName} {...register("fullName", { required: true })} placeholder="Your Full Name" className="mb-2 p-2 border rounded-2" />
+                            <input type="email" defaultValue={user.email} {...register("email", { required: true })} placeholder="Your Email" className="mb-2 p-2 border rounded-2" />
                             <input type="number" {...register("phoneNumber", { required: true })} placeholder="Phone Number" className="mb-2 p-2 border rounded-2" />
                             <select {...register("ticketType")} className="mb-2 p-2 border rounded-2">
                                 <option value="Bus">Travel with Bus</option>
