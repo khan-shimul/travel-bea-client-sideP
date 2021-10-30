@@ -1,0 +1,6 @@
+.login-form{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* background-color: #000000; */
+    padding: 30px;
+    border-radius: 10px;
+}

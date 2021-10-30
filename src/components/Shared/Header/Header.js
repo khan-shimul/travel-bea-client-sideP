@@ -2,9 +2,13 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import logo from '../../../images/Logo/logo1.png'
+import useAuth from '../../../hooks/useAuth';
+import logo from '../../../images/Logo/logo1.png';
+import './Header.css';
 
 const Header = () => {
+    const { user, logOut } = useAuth();
+
     const activeStyle = {
         fontWeight: "bold",
         // color: "red"
@@ -39,7 +43,17 @@ const Header = () => {
                             >About</Nav.Link>
                         </Nav>
 
-                        <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link>
+                        {
+                            !user ? <Nav.Link as={NavLink} to="/login" className="text-decoration-none text-white "><span><i className="fas fa-sign-in-alt text-primary login-icon"></i></span> Login</Nav.Link> :
+                                <button onClick={logOut}>Logout</button>
+                        }
+
+                        {
+                            user && <div>
+                                <img className="user-dp" src={user?.photoURL} alt="" />
+                            </div>
+                        }
+
                         <Nav.Link as={NavLink} to="/add-package"
                             activeStyle={activeStyle}
                             className="text-white"

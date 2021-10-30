@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import Package from '../Package/Package';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+// // ..
+// AOS.init();
 
 const TourPackage = () => {
     const [packages, setPackages] = useState([]);
