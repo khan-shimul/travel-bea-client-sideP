@@ -52,7 +52,7 @@ const Header = () => {
                         }
 
                         {
-                            user && <div>
+                            user?.photoURL && <div>
                                 <img className="user-dp" src={user?.photoURL} alt="" />
                             </div>
                         }

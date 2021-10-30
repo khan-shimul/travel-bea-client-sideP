@@ -3,6 +3,7 @@ import './App.css';
 import AddPackage from './components/AddPackage/AddPackage';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
+import SignUp from './components/Login/SignUp/SignUp';
 import NotFound from './components/NotFound/NotFound';
 import PackageDetails from './components/PackageDetails/PackageDetails';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -31,6 +32,9 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
             </Route>
             <Route path="*">
               <NotFound />
