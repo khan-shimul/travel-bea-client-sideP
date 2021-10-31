@@ -7,7 +7,7 @@ const MyOrders = () => {
     const [bookedPack, setBookedPack] = useState([]);
 
     const myOrders = bookedPack.filter(pack => pack?.email === user?.email)
-    console.log(myOrders);
+    // console.log(myOrders);
 
     useEffect(() => {
         fetch('http://localhost:5000/booked')
@@ -17,13 +17,20 @@ const MyOrders = () => {
 
     // handle delete
     const handleCancel = id => {
-        fetch(`http://localhost:5000/booked/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
+        const proceed = window.confirm('Are you sure want to cancel this package?');
+        if (proceed) {
+            fetch(`http://localhost:5000/booked/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(result => {
+                    if (result.deletedCount) {
+                        alert('Successfully cancel the booking')
+                        const remaining = bookedPack.filter(bookingPack => bookingPack._id !== id)
+                        setBookedPack(remaining)
+                    }
+                })
+        }
     }
 
     return (
