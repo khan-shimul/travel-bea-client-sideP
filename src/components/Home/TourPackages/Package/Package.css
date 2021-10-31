@@ -1,10 +1,37 @@
+/* .package{
+    transition: 0.9s;
+}
+.package:hover{
+    box-shadow: rgba(100, 100, 111, 0.226) 0px 7px 29px 0px;
+    border-radius: 10px;
+} */
+
 .place img{
     height: 200px;
     width: 100%;
     object-fit: cover;
 }
 
+.location{
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
 .rating-star{
     font-size: 14px;
-    color: #f57e2f;
+    color: #fc883a;
+}
+
+.btn-book-now{
+    background-color: transparent;
+    border: 1px solid #FF7F47;
+    border-radius: 3px;
+    padding: 5px 15px;
+    color: #262339;
+    transition: 0.3s;
+}
+.btn-book-now:hover{
+    background-color: #FF7F47;
+    color: white;
 }

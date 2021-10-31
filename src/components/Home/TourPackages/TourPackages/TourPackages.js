@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Package from '../Package/Package';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'; // You can also use <link> for styles
-// // ..
-// AOS.init();
 
 const TourPackage = () => {
     const [packages, setPackages] = useState([]);
@@ -21,10 +17,14 @@ const TourPackage = () => {
             <div className="d-flex justify-content-center align-items-center flex-column">
                 <h2 className="fw-bold">Select Package For Your Travel</h2>
                 <h5>Choose Package</h5>
+                <div className="line mb-3"></div>
+                {
+                    !packages.length && <Spinner animation="border" variant="warning" className="mt-3" />
+                }
                 <div className="packages-container">
-                    <Row data-aos="zoom-in" xs={1} md={3} className="g-4">
+                    <Row xs={1} md={3} className="g-4">
                         {
-                            packages.map(pack => <Package
+                            packages?.map(pack => <Package
                                 key={pack._id}
                                 pack={pack}
                             />)

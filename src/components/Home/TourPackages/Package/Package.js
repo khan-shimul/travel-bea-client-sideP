@@ -1,11 +1,15 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { useHistory } from 'react-router';
 import './Package.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Package = ({ pack }) => {
-    const { _id, name, description, duration, img, language, location, price, reviews, rating } = pack;
+    const { _id, name, img, location, price, rating } = pack;
 
     const history = useHistory();
 
@@ -16,36 +20,25 @@ const Package = ({ pack }) => {
 
     return (
         <Col>
-            <Card className="h-100 place">
+            <Card data-aos="zoom-in" className="h-100 place package">
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
-                    <div className="row d-flex justify-content-between align-items-center">
-                        <div className="col-md-6">
-                            <p className="fs-6"><span className="fw-bold fs-5">${price}</span>/Per Person</p>
-                        </div>
-                        <div className="col-md-6">
-                            <p>{duration}</p>
-                        </div>
-                    </div>
-                    <Card.Title className="fw-bold fs-4">{name}</Card.Title>
-                    <span>{location}</span>
-                    <div className="row d-flex justify-content-between align-items-center">
-                        <div className="col-md-6">
-                            <Rating className="icons"
-                                initialRating={rating}
-                                emptySymbol="far fa-star rating-star"
-                                fullSymbol="fas fa-star fs-6 rating-star"
-                                readonly
-                            />
-                        </div>
-                        <div className="col-md-6">
 
-                        </div>
+                    <h2 className="fw-bold fs-5">${price}<span className="fs-6 fw-normal">/Per Person</span> </h2>
+                    {/* <p>{duration}</p> */}
+                    <Card.Title className="fw-bold fs-4">{name}</Card.Title>
+                    <p className="location">{location}</p>
+                    <div className="mb-2">
+                        <Rating className="icons"
+                            initialRating={rating}
+                            emptySymbol="far fa-star rating-star"
+                            fullSymbol="fas fa-star fs-6 rating-star"
+                            readonly
+                        />
                     </div>
-                    <Card.Text>
-                        {description?.slice(0, 50)}...
-                    </Card.Text>
-                    <Button variant="warning" onClick={() => handleDetails(_id)}>Book Now</Button>
+                    <button variant="warning" onClick={() => handleDetails(_id)}
+                        className="btn-book-now"
+                    >Book Now</button>
                 </Card.Body>
             </Card>
         </Col>
