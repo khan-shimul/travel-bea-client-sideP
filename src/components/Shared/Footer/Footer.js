@@ -8,20 +8,20 @@ const Footer = () => {
     return (
         <footer>
             <div className="text-white bg-footer py-2">
-                <div className="row footer p-5 container mx-auto">
+                <div className="row p-5 container mx-auto">
                     <div className="col-12 col-md-4">
                         <div className="mb-2">
                             <img className="logo me-2" src={logo} alt="" />
                             <span className="fw-bold fs-3">Travel <span className="primary-text">Bea</span></span>
                         </div>
-                        <p className="short-footer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid maxime aut ut voluptate dolorum nisi ducimus ratione</p>
+                        <p className="short-about">Booking with TravelBea is often cheaper than booking online as they have access to awesome money-saving deals. </p>
                         <img src={accept} className="img-fluid pe-5" alt="" />
 
                     </div>
                     <div className="col-md-4">
-                        <div className="contact">
+                        <div>
                             <h2 className="fw-bold fs-3">Contact</h2>
-                            <div className="home d-flex">
+                            <div className="d-flex">
                                 <div className="me-2">
                                     <i className="fas fa-home primary-text"></i>
                                 </div>
@@ -29,12 +29,12 @@ const Footer = () => {
                                     <p>New street, New York, UK</p>
                                 </div>
                             </div>
-                            <div className="phone d-flex">
+                            <div className="d-flex">
                                 <div className="me-2">
                                     <i className="fas fa-phone-alt primary-text"></i>
                                 </div>
                                 <div>
-                                    <p>(0008) 159-456-999</p>
+                                    <p>(123) 00-456-789</p>
                                 </div>
                             </div>
                             <div className="d-flex">

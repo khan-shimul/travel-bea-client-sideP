@@ -5,6 +5,10 @@
     height: 50px;
     width: 50px;
 }
+.short-about{
+    font-size: 15px;
+    margin-right: 3px;
+}
 .primary-text{
     color: #FF7F47;
 }
