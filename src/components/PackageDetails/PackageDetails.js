@@ -18,12 +18,17 @@ const PackageDetails = () => {
     }, [])
 
     const { register, handleSubmit, reset } = useForm();
+    // handle booked package
     const onSubmit = data => {
         const packaged = singlePack;
         packaged.email = user.email;
         packaged.clientInfo = data;
         packaged.status = 'Pending';
-        delete packaged._id
+        delete packaged._id;
+        // generate random unique id
+        const randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+        const unique_id = randLetter + Date.now();
+        packaged.unique_id = unique_id;
 
         axios.post('http://localhost:5000/booked', { packaged })
             .then(result => {

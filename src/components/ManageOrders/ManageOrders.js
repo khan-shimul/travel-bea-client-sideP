@@ -22,7 +22,7 @@ const ManageOrders = () => {
                 .then(result => {
                     if (result.deletedCount) {
                         alert('Successfully delete the booking')
-                        const remaining = bookedPackages.filter(bookedPack => bookedPack._id !== id)
+                        const remaining = bookedPackages.filter(bookedPack => bookedPack.unique_id !== id)
                         setBookedPackages(remaining)
                     }
                 })
@@ -32,7 +32,7 @@ const ManageOrders = () => {
     // handle update
     const handleUpdate = id => {
         // find specific package
-        const specific = bookedPackages.find(pck => pck._id === id)
+        const specific = bookedPackages.find(pck => pck.unique_id === id)
         specific.status = 'Approved'
 
         fetch(`http://localhost:5000/booked/${id}`, {
@@ -71,13 +71,13 @@ const ManageOrders = () => {
                         </thead>
                         <tbody>
                             {
-                                bookedPackages.map(bookedPackage => <tr key={bookedPackage._id}>
+                                bookedPackages.map(bookedPackage => <tr key={bookedPackage.unique_id}>
                                     <td>{bookedPackage?.clientInfo?.fullName}</td>
                                     <td>{bookedPackage?.name}</td>
                                     <td>{bookedPackage?.clientInfo?.ticketType}</td>
                                     <td>{bookedPackage?.email}</td>
-                                    <td><button onClick={() => handleUpdate(bookedPackage._id)}>{bookedPackage?.status}</button></td>
-                                    <td><button onClick={() => handleDelete(bookedPackage._id)}>Delete</button></td>
+                                    <td><button onClick={() => handleUpdate(bookedPackage.unique_id)}>{bookedPackage?.status}</button></td>
+                                    <td><button onClick={() => handleDelete(bookedPackage.unique_id)}>Delete</button></td>
                                 </tr>)
                             }
                         </tbody>

@@ -26,7 +26,7 @@ const MyOrders = () => {
                 .then(result => {
                     if (result.deletedCount) {
                         alert('Successfully cancel the booking')
-                        const remaining = bookedPack.filter(bookingPack => bookingPack._id !== id)
+                        const remaining = bookedPack.filter(bookingPack => bookingPack.unique_id !== id)
                         setBookedPack(remaining)
                     }
                 })
@@ -59,7 +59,7 @@ const MyOrders = () => {
                                     <td>{order?.clientInfo?.ticketType}</td>
                                     <td>${order?.price}</td>
                                     <td>{order?.status}</td>
-                                    <td><button onClick={() => handleCancel(order._id)}>Cancel</button></td>
+                                    <td><button onClick={() => handleCancel(order.unique_id)}>Cancel</button></td>
                                 </tr>)
                             }
                         </tbody>
