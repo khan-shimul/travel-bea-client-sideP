@@ -10,7 +10,7 @@ const MyOrders = () => {
     // console.log(myOrders);
 
     useEffect(() => {
-        fetch('http://localhost:5000/booked')
+        fetch('https://guarded-thicket-61427.herokuapp.com/booked')
             .then(res => res.json())
             .then(data => setBookedPack(data))
     }, [])
@@ -19,7 +19,7 @@ const MyOrders = () => {
     const handleCancel = id => {
         const proceed = window.confirm('Are you sure want to cancel this package?');
         if (proceed) {
-            fetch(`http://localhost:5000/booked/${id}`, {
+            fetch(`https://guarded-thicket-61427.herokuapp.com/booked/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

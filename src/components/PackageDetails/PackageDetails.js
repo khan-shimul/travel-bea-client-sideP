@@ -30,7 +30,7 @@ const PackageDetails = () => {
         const unique_id = randLetter + Date.now();
         packaged.unique_id = unique_id;
 
-        axios.post('http://localhost:5000/booked', { packaged })
+        axios.post('https://guarded-thicket-61427.herokuapp.com/booked', { packaged })
             .then(result => {
                 if (result.data.insertedId) {
                     alert('Successfully booked')

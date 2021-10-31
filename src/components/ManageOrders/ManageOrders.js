@@ -6,7 +6,7 @@ const ManageOrders = () => {
     const [isApproved, setIsApproved] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:5000/booked')
+        fetch('https://guarded-thicket-61427.herokuapp.com/booked')
             .then(res => res.json())
             .then(data => setBookedPackages(data))
     }, [isApproved])
@@ -15,7 +15,7 @@ const ManageOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete this package?');
         if (proceed) {
-            fetch(`http://localhost:5000/booked/${id}`, {
+            fetch(`https://guarded-thicket-61427.herokuapp.com/booked/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const ManageOrders = () => {
         const specific = bookedPackages.find(pck => pck.unique_id === id)
         specific.status = 'Approved'
 
-        fetch(`http://localhost:5000/booked/${id}`, {
+        fetch(`https://guarded-thicket-61427.herokuapp.com/booked/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
