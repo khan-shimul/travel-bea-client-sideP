@@ -1,0 +1,20 @@
+.bg-footer{
+    background-color: #262339;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.primary-text{
+    color: #FF7F47;
+}
+.primary-color{
+    background-color: #FF7F47;
+}
+
+.social a{
+    color: tomato;
+}
+.social a:hover{
+    color: #FF7F47;
+}
