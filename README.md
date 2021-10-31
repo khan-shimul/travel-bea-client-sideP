@@ -4,8 +4,15 @@ Here is my live project [TravelBea](https://travel-bea.web.app/).
 
 ## About this project:
 
-Medical Solve is a health care related website. Here user can buy medicine, medical device and they can contact with specialist according to their problem.
+TravelBea is a Travel AGency related website. Here user can book ticket to travel.
 
+* This is react.js website. I used used React-bootstrap, React font-awesome, React Router, React Rating nd Vanilla CSS.
+* Also i used mongodb database.
+* User can check their bookings.
+* And also implement Admin Dashboard.
+* Admin can manage all orders.
+* Implement Authentication system.
+* Implement private route/protected route
+* Implement Redirect uri (user friendly)
 
-
-Due to exam nd electricity i couldn't build more. I have to improve my design and word on shopping cart. However, i'll add more feature in the future.
+I have to improve my design and work on Admin Dashboard. However, i'll add more feature in the future.
