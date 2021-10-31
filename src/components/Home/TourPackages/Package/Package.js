@@ -43,7 +43,7 @@ const Package = ({ pack }) => {
                         </div>
                     </div>
                     <Card.Text>
-                        {description.slice(0, 50)}...
+                        {description?.slice(0, 50)}...
                     </Card.Text>
                     <Button variant="warning" onClick={() => handleDetails(_id)}>Book Now</Button>
                 </Card.Body>

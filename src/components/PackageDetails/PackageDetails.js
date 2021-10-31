@@ -23,12 +23,13 @@ const PackageDetails = () => {
         packaged.email = user.email;
         packaged.clientInfo = data;
         packaged.status = 'Pending';
-        console.log(packaged)
+        delete packaged._id
+
         axios.post('http://localhost:5000/booked', { packaged })
             .then(result => {
                 if (result.data.insertedId) {
                     alert('Successfully booked')
-                    // reset();
+                    reset();
                 }
             })
     }

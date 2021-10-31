@@ -3,14 +3,13 @@ import { Table } from 'react-bootstrap';
 
 const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
-    const [isApproved, setIsApproved] = useState(false);
+    const [isApproved, setIsApproved] = useState(false)
 
-    // load booked packs
     useEffect(() => {
         fetch('http://localhost:5000/booked')
             .then(res => res.json())
             .then(data => setBookedPackages(data))
-    }, [isApproved]);
+    }, [isApproved])
 
     // handle delete from all booked packages
     const handleDelete = id => {
@@ -28,7 +27,7 @@ const ManageOrders = () => {
                     }
                 })
         }
-    };
+    }
 
     // handle update
     const handleUpdate = id => {
@@ -50,7 +49,7 @@ const ManageOrders = () => {
                     setIsApproved(true)
                 }
             })
-    };
+    }
 
     return (
         <div>
