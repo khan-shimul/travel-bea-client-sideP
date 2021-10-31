@@ -1,0 +1,10 @@
+.error-container{
+    background-color: #C7EBE9;
+}
+.error-title{
+    font-size: 35px;
+    font-weight: 700;
+    color: #4d2d5f;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
