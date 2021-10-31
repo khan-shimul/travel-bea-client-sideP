@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import './ManageOrders.css';
 
 const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
@@ -53,12 +54,12 @@ const ManageOrders = () => {
 
     return (
         <div>
-            <div className="text-center">
-                <h2>Manage All Orders</h2>
+            <div className="banner-my-booking d-flex justify-content-center align-items-center text-white text-center banner-my-booking text-center py-5">
+                <h2 className="fw-bold fs-3">Manage All Orders</h2>
             </div>
-            <div className="table-responsive-sm table-responsive table-responsive-md table-responsive-lg table-responsive-xl">
+            <div className="table-responsive-sm table-responsive table-responsive-md table-responsive-lg table-responsive-xl text-center my-3">
                 {
-                    bookedPackages.length && <Table striped bordered hover variant="light" className="container">
+                    bookedPackages.length && <Table striped bordered hover variant="info">
                         <thead >
                             <tr>
                                 <th>Client</th>
@@ -66,7 +67,7 @@ const ManageOrders = () => {
                                 <th>Ticket Type</th>
                                 <th>Email</th>
                                 <th>Status</th>
-                                <th>Review</th>
+                                <th>Trash</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,8 +77,8 @@ const ManageOrders = () => {
                                     <td>{bookedPackage?.name}</td>
                                     <td>{bookedPackage?.clientInfo?.ticketType}</td>
                                     <td>{bookedPackage?.email}</td>
-                                    <td><button onClick={() => handleUpdate(bookedPackage.unique_id)}>{bookedPackage?.status}</button></td>
-                                    <td><button onClick={() => handleDelete(bookedPackage.unique_id)}>Delete</button></td>
+                                    <td><button onClick={() => handleUpdate(bookedPackage.unique_id)} className="btn-status">{bookedPackage?.status}</button></td>
+                                    <td><button onClick={() => handleDelete(bookedPackage.unique_id)} className="booking-btn">Delete</button></td>
                                 </tr>)
                             }
                         </tbody>

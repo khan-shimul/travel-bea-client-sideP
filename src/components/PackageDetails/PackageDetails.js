@@ -88,7 +88,7 @@ const PackageDetails = () => {
                     <div className="col-md-4">
                         <form onSubmit={handleSubmit(onSubmit)} className="sub-form d-flex flex-column p-4">
                             <h4 className="fw-bold fs-5 mb-3">Book This Package</h4>
-                            <input defaultValue={singlePack?.name} readOnly {...register("packageName")} className="mb-2 p-3 border rounded-2" />
+                            <input defaultValue={singlePack?.name} {...register("packageName")} className="mb-2 p-3 border rounded-2" />
                             <input defaultValue={user.displayName} {...register("fullName", { required: true })} placeholder="Your Full Name" className="mb-2 p-3 border rounded-2" />
                             <input type="email" defaultValue={user.email} {...register("email", { required: true })} placeholder="Your Email" className="mb-2 p-3 border rounded-2" />
                             <input type="number" {...register("phoneNumber", { required: true })} placeholder="Phone Number" className="mb-2 p-2 border rounded-2" />

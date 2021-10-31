@@ -3,10 +3,6 @@ import { Card, Col } from 'react-bootstrap';
 import Rating from 'react-rating';
 import { useHistory } from 'react-router';
 import './Package.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
 
 const Package = ({ pack }) => {
     const { _id, name, img, location, price, rating } = pack;

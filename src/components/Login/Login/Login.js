@@ -8,7 +8,7 @@ import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { auth, user, setUser, signInWithEmailAndPassword, signInUsingGoogle, error, setError, setIsLoading } = useAuth();
+    const { auth, setUser, signInWithEmailAndPassword, signInUsingGoogle, error, setError, setIsLoading } = useAuth();
     // console.log(user)
 
     const location = useLocation();
@@ -53,19 +53,20 @@ const Login = () => {
     return (
         <div className="container">
             <div className="row d-flex justify-content-center align-items-center my-5">
-                <div className="col-md-6">
+                <div data-aos="fade-right" className="col-md-6">
                     <img src={login2} alt="" />
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column login-form">
-                        <h2>Please Login</h2>
-                        <input placeholder="Email" {...register("email", { required: true })} className="mb-2 p-1" />
-                        <input type="password" placeholder="Password" {...register("password", { required: true })} className="mb-2 p-1" />
+                        <h2 className="fw-bold fs-4 mb-3">Please Login</h2>
+                        <input placeholder="Email" {...register("email", { required: true })} className="mb-2 p-3 border rounded-2" />
+                        <input type="password" placeholder="Password" {...register("password", { required: true })} className="mb-2 p-3 border rounded-2" />
                         <p><small>{error}</small></p>
-                        <input type="submit" value="Login" />
-                        <p>New to TravelBea? <Link to="/signup">Create Account</Link> </p>
-                        <span className="text-center mt-3">Or Login With</span>
-                        <Button variant="primary" onClick={handleGoogleSignIn}>Google</Button>
+                        <input type="submit" value="Login" className="btn-login" />
+                        <p>New to TravelBea? <Link to="/signup" className="text-decoration-none">Create Account</Link> </p>
+                        <span className="text-center mt-2">Or Login With</span>
+                        <hr className="w-25 d-flex mx-auto" />
+                        <button className="btn-google" onClick={handleGoogleSignIn}><i className="fab fa-google"></i> Google</button>
                     </form>
                 </div>
             </div>

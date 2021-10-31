@@ -7,7 +7,7 @@ import accept from '../../../images/accept.png';
 const Footer = () => {
     return (
         <footer>
-            <div className="text-white bg-footer py-2">
+            <div className="text-white bg-footer pb-2">
                 <div className="row p-5 container mx-auto">
                     <div className="col-12 col-md-4">
                         <div className="mb-2">

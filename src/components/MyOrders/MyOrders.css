@@ -1,0 +1,20 @@
+.banner-my-booking{
+    background-image: url("../../images/1.jpg"),
+    linear-gradient(rgba(37, 11, 0, 0.5), rgba(44, 0, 0, 0.5));
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+    background-blend-mode: overlay;
+}
+
+.booking-btn{
+    background-color: #df4f4f;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 14px;
+}

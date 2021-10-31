@@ -72,20 +72,21 @@ const SignUp = () => {
         <div>
             <div className="container">
                 <div className="row d-flex justify-content-center align-items-center my-5">
-                    <div className="col-md-6">
+                    <div data-aos="fade-right" className="col-md-6">
                         <img src={login2} alt="" />
                     </div>
                     <div className="col-md-6">
                         <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column login-form">
-                            <h2>Create Account</h2>
-                            <input placeholder="Full Name" {...register("fullName", { required: true })} className="mb-2 p-1" />
-                            <input placeholder="Email" {...register("email", { required: true })} className="mb-2 p-1" />
-                            <input type="password" placeholder="Password" {...register("password", { required: true })} className="mb-2 p-1" />
+                            <h2 className="fw-bold fs-4 mb-3">Create Account</h2>
+                            <input placeholder="Full Name" {...register("fullName", { required: true })} className="mb-2 p-3 border rounded-2" />
+                            <input placeholder="Email" {...register("email", { required: true })} className="mb-2 p-3 border rounded-2" />
+                            <input type="password" placeholder="Password" {...register("password", { required: true })} className="mb-2 p-3 border rounded-2" />
                             <p><small>{error}</small></p>
-                            <input type="submit" value="Sign Up" />
-                            <p>Already have an account? <Link to="/login">Login</Link> </p>
-                            <span className="text-center mt-3">Or</span>
-                            <Button variant="primary" onClick={handleGoogleSignIn}>Google</Button>
+                            <input type="submit" value="Sign Up" className="btn-login" />
+                            <p className="mt-2">Already have an account? <Link to="/login" className="text-decoration-none">Login</Link> </p>
+                            <span className="text-center mt-2">Or Login With</span>
+                            <hr className="w-25 d-flex mx-auto" />
+                            <button className="btn-google" variant="primary" onClick={handleGoogleSignIn}><i className="fab fa-google"></i>  Google</button>
                         </form>
                     </div>
                 </div>

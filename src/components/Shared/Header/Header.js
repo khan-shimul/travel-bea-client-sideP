@@ -46,11 +46,11 @@ const Header = () => {
                                     activeClassName="selected"
                                     activeStyle={activeStyle}
                                 >My Booking</NavLink>
-                                <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                <NavDropdown title="Admin" id="basic-nav-dropdown">
                                     <NavDropdown.Item as={NavLink} to="/manage-orders"
                                         activeClassName="selected"
                                         activeStyle={activeStyle}
-                                    >Manage Orders</NavDropdown.Item>
+                                    >Manage Booking</NavDropdown.Item>
                                     <NavDropdown.Item as={NavLink} to="/add-package"
                                         activeClassName="selected"
                                         activeStyle={activeStyle}

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Banner.css';
 import { Carousel } from 'react-bootstrap';
-import banner1 from '../../../images/Banner/banner 1.jpg'
-import banner2 from '../../../images/Banner/2.jpg'
-import banner3 from '../../../images/Banner/3.jpg'
+import banner2 from '../../../images/Banner/2.jpg';
+import banner4 from '../../../images/Banner/4.jpg';
+import banner5 from '../../../images/Banner/5.jpg';
 
 const Banner = () => {
     return (
@@ -12,34 +12,34 @@ const Banner = () => {
                 <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src={banner1}
+                        src={banner4}
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className="fw-bold fs-1">Amazing Tour In Bangkok</h3>
+                        <p className="fs-6">6days, 7night</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src={banner2}
+                        src={banner5}
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3 className="fw-bold fs-1">Amazing Tour In India</h3>
+                        <p className="fs-6">6days, 7night</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={banner3}
+                        src={banner2}
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3 className="fw-bold fs-1">Amazing Tour In Thiland</h3>
+                        <p className="fs-6">6days, 7night</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
