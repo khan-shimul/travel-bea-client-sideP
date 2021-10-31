@@ -4,6 +4,7 @@ import AddPackage from './components/AddPackage/AddPackage';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import SignUp from './components/Login/SignUp/SignUp';
+import ManageOrders from './components/ManageOrders/ManageOrders';
 import MyOrders from './components/MyOrders/MyOrders';
 import NotFound from './components/NotFound/NotFound';
 import PackageDetails from './components/PackageDetails/PackageDetails';
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <Route path="/my-orders">
               <MyOrders />
+            </Route>
+            <Route path="/manage-orders">
+              <ManageOrders />
             </Route>
             <PrivateRoute path="/add-package">
               <AddPackage />
