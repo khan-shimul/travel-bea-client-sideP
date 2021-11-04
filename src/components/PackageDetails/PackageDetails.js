@@ -38,14 +38,14 @@ const PackageDetails = () => {
                 if (result.data.insertedId) {
                     alert('Successfully booked')
                     reset();
-                    history.push('/home')
+                    history.push('/my-orders')
                 }
             })
     }
 
     // back to home
     const handleBackHome = () => {
-        history.push("/home")
+        history.push("/home#tour-package")
     }
 
 

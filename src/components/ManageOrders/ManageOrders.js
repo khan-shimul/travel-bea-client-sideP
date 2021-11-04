@@ -4,7 +4,7 @@ import './ManageOrders.css';
 
 const ManageOrders = () => {
     const [bookedPackages, setBookedPackages] = useState([]);
-    const [isApproved, setIsApproved] = useState(false)
+    const [isApproved, setIsApproved] = useState(false);
 
     useEffect(() => {
         fetch('https://guarded-thicket-61427.herokuapp.com/booked')
@@ -67,6 +67,7 @@ const ManageOrders = () => {
                                 <th>Ticket Type</th>
                                 <th>Email</th>
                                 <th>Status</th>
+                                <th>Review</th>
                                 <th>Trash</th>
                             </tr>
                         </thead>
@@ -77,7 +78,10 @@ const ManageOrders = () => {
                                     <td>{bookedPackage?.name}</td>
                                     <td>{bookedPackage?.clientInfo?.ticketType}</td>
                                     <td>{bookedPackage?.email}</td>
-                                    <td><button onClick={() => handleUpdate(bookedPackage.unique_id)} className="btn-status">{bookedPackage?.status}</button></td>
+                                    <td>{bookedPackage?.status}</td>
+
+                                    <td><button onClick={() => handleUpdate(bookedPackage?.unique_id)} className="btn-status">{bookedPackage.status === 'Approved' ? 'Done' : 'Confirm'}</button></td>
+
                                     <td><button onClick={() => handleDelete(bookedPackage.unique_id)} className="booking-btn">Delete</button></td>
                                 </tr>)
                             }

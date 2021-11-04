@@ -2,7 +2,6 @@ import React from 'react';
 import login2 from '../../../images/Login/login2.png';
 import { useForm } from "react-hook-form";
 import './Login.css';
-import { Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -38,7 +37,6 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then(result => {
-                console.log(result.user)
                 setUser(result.user)
                 setError('')
                 history.push(redirect_uri)
@@ -54,7 +52,7 @@ const Login = () => {
         <div className="container">
             <div className="row d-flex justify-content-center align-items-center my-5">
                 <div data-aos="fade-right" className="col-md-6">
-                    <img src={login2} alt="" />
+                    <img className="img-fluid" src={login2} alt="" />
                 </div>
                 <div className="col-md-6">
                     <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column login-form">
