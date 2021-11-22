@@ -20,41 +20,39 @@ AOS.init();
 function App() {
   return (
     <div className="Font-link">
-      <AuthProvider>
-        <Router>
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <PrivateRoute exact path="/package-details/:id">
-              <PackageDetails />
-            </PrivateRoute>
-            <Route path="/my-orders">
-              <MyOrders />
-            </Route>
-            <Route path="/manage-orders">
-              <ManageOrders />
-            </Route>
-            <PrivateRoute path="/add-package">
-              <AddPackage />
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-          <Footer />
-        </Router>
-      </AuthProvider>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute exact path="/package-details/:id">
+            <PackageDetails />
+          </PrivateRoute>
+          <Route path="/my-orders">
+            <MyOrders />
+          </Route>
+          <Route path="/manage-orders">
+            <ManageOrders />
+          </Route>
+          <PrivateRoute path="/add-package">
+            <AddPackage />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

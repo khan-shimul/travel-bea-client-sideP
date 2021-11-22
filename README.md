@@ -1,4 +1,4 @@
-# Medical Solve
+# TravelBea
 
 Here is my live project [TravelBea](https://travel-bea.web.app/).
 
